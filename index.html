@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              bgMain: "#1A0B2E",
+              stroke: "#412567",
+            },
+            backgroundImage: {
+              subscribeGradient:
+                "linear-gradient(90deg, #F7E93F 0%, #FB09B4 51%, #9100F8 100%)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>TechWave</title>
+  </head>
+
+  <body class="bg-bgMain font-inter text-white">
+    <!-- NAV Menu -->
+    <header class="w-full">
+      <nav
+        class="fixed top-0 left-0 z-50 w-full border-b border-stroke bg-bgMain px-6 py-3"
+      >
+        <div class="mx-auto flex w-[95%] max-w-[1400px] items-center">
+          <div class="flex items-center gap-2">
+            <img
+              src="./assets/TechWave.png"
+              alt="TechWave Logo"
+              class="h-7 w-auto"
+            />
+          </div>
+
+          <!-- For Desktop Menu -->
+          <div class="hidden flex-1 justify-center lg:flex">
+            <div class="flex items-center gap-10">
+              <a
+                href="#about"
+                class="text-sm font-medium opacity-90 transition hover:opacity-100"
+              >
+                About
+              </a>
+              <a
+                href="#episodes"
+                class="text-sm font-medium opacity-90 transition hover:opacity-100"
+              >
+                Episodes
+              </a>
+              <a
+                href="#host"
+                class="text-sm font-medium opacity-90 transition hover:opacity-100"
+              >
+                Host
+              </a>
+            </div>
+          </div>
+
+          <!-- Subscribe Button (Desktop) -->
+          <div class="hidden lg:flex">
+            <a
+              href="#subscribe"
+              class="inline-flex items-center gap-2 rounded-full bg-subscribeGradient px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:scale-[1.03]"
+            >
+              Subscribe
+              <span class="text-base leading-none">→</span>
+            </a>
+          </div>
+
+          <!-- Mobile Hamburger -->
+          <button class="ml-auto lg:hidden flex flex-col gap-1">
+            <span class="block h-0.5 w-6 bg-white"></span>
+            <span class="block h-0.5 w-6 bg-white"></span>
+            <span class="block h-0.5 w-6 bg-white"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-24"
+    >
+      <!-- Background Image -->
+      <img
+        src="./assets/hero-bg.png"
+        alt="Hero Background"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+
+      <!-- HERO CONTENT -->
+      <div class="relative z-10 flex flex-col items-center text-center">
+        <!-- Circle + Mic -->
+        <div class="relative">
+          <!-- Circle Image -->
+          <img
+            src="./assets/hero-circle.png"
+            alt="Circle"
+            class="h-[220px] w-[220px] sm:h-[260px] sm:w-[260px] lg:h-[320px] lg:w-[320px]"
+          />
+
+          <!-- Mic Image -->
+          <img
+            src="./assets/microphone.png"
+            alt="Mic"
+            class="absolute left-1/2 top-1/2 h-[90px] w-auto -translate-x-1/2 -translate-y-1/2 sm:h-[110px] lg:h-[140px]"
+          />
+
+          <!-- NEW Badge -->
+          <div
+            class="absolute right-1 top-1 rounded-full bg-[#00FF9C] px-4 py-2 text-sm font-bold text-black shadow-lg sm:right-3 sm:top-3"
+          >
+            NEW
+          </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="mt-8 text-[60px] font-bold sm:text-[60px] lg:text-[60px]">
+          TechWave
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="mt-3 max-w-[520px] text-[16px] text-white/70 sm:text-[16px]">
+          Your daily dose of tech insights, productivity hacks, and personal
+          growth
+        </p>
+
+        <!-- Buttons -->
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <!-- Listen On Spotify -->
+          <a
+            href="#"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-subscribeGradient px-6 py-2 text-sm font-semibold text-white shadow-md transition hover:scale-[1.03]"
+          >
+            <img src="./assets/spotify.png" alt="Spotify" class="h-4 w-4" />
+            Listen On Spotify
+          </a>
+
+          <!-- Subscribe Button -->
+          <a
+            href="#"
+            class="inline-flex items-center justify-center gap-2 rounded-full border border-[#00FF9C] bg-transparent px-6 py-2 text-sm font-semibold text-[#00FF9C] transition hover:bg-[#00FF9C]/10"
+          >
+            <img src="./assets/message.png" alt="Message" class="h-4 w-4" />
+            Subscribe
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="bg-bgMain px-4 py-20">
+      <div class="mx-auto w-[95%] max-w-[1400px] text-center">
+        <!-- Heading -->
+        <h2 class="text-[48px] font-bold leading-tight">About The Podcast</h2>
+
+        <!-- Paragraph -->
+        <p
+          class="mx-auto mt-6 max-w-[850px] text-[16px] leading-7 text-white/70"
+        >
+          TechWave is your go-to podcast for staying ahead in the fast-paced
+          world of technology. We break down complex topics into digestible
+          insights, explore productivity strategies that actually work, and
+          share stories of personal growth from industry leaders.
+          <br /><br />
+          Join thousands of young professionals and tech enthusiasts who start
+          their day with TechWave.
+        </p>
+
+        <!-- Divider Line -->
+        <div
+          class="mx-auto mt-12 h-[1px] w-full max-w-[1100px] bg-white/10"
+        ></div>
+
+        <!-- Stats -->
+        <div
+          class="mt-12 grid grid-cols-2 gap-y-12 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <!-- Stat 1 -->
+          <div>
+            <h3 class="text-[48px] font-bold text-[#00FF88]">150K+</h3>
+            <p class="mt-2 text-[12px] tracking-widest text-white/60">
+              MONTHLY LISTENERS
+            </p>
+          </div>
+
+          <!-- Stat 2 -->
+          <div>
+            <h3 class="text-[48px] font-bold text-[#00FF88]">200+</h3>
+            <p class="mt-2 text-[12px] tracking-widest text-white/60">
+              EPISODES PUBLISHED
+            </p>
+          </div>
+
+          <!-- Stat 3 -->
+          <div>
+            <h3 class="text-[48px] font-bold text-[#00FF88]">4.9★</h3>
+            <p class="mt-2 text-[12px] tracking-widest text-white/60">
+              AVERAGE RATING
+            </p>
+          </div>
+
+          <!-- Stat 4 -->
+          <div>
+            <h3 class="text-[48px] font-bold text-[#00FF88]">50+</h3>
+            <p class="mt-2 text-[12px] tracking-widest text-white/60">
+              INDUSTRY EXPERTS
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
